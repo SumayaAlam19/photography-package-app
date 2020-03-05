@@ -69,6 +69,8 @@ class PackagesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def package_params
-      params.require(:package).permit(:name, :price, :hours, :notes)
+      params.require(:package).permit(:name, :price, :hours, :notes, images: [])
     end
 end
+
+

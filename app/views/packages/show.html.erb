@@ -5,6 +5,14 @@
   <%= @package.name %>
 </p>
 
+<% if @package.images.attached? %>
+	<% @package.images.each do |img| %>
+		<%= image_tag img %>
+	<% end %>
+  <% else %>
+  <%= img src="https://picsum.photos/id/#{rand(1..300)}/200/300/" %>
+<% end %>
+
 <p>
   <strong>Price:</strong>
   <%= @package.price %>
